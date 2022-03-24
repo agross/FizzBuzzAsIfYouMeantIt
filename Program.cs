@@ -44,21 +44,21 @@ public class FizzBuzzTests
 
   string FizzBuzz(int number)
   {
-    var result = number.ToString();
-
-    if (number % 5 == 0)
-    {
-      result = "Buzz";
-    }
+    var result = "";
 
     if (number % 3 == 0)
     {
-      result = "Fizz";
+      result += "Fizz";
     }
 
-    if (number % 5 == 0 && number % 3 == 0)
+    if (number % 5 == 0)
     {
-      result = "FizzBuzz";
+      result += "Buzz";
+    }
+
+    if (result == "")
+    {
+      result = number.ToString();
     }
 
     return result;
