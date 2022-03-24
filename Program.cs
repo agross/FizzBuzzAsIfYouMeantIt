@@ -3,7 +3,7 @@
 using Xunit;
 using Xunit.Abstractions;
 
-Console.WriteLine("Hello, World!");
+Numbers.Print(100, Console.WriteLine, FizzBuzz.Translate);
 
 public class FizzBuzzTests
 {
