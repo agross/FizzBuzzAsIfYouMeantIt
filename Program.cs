@@ -12,6 +12,12 @@ public class FizzBuzzTests
     Assert.Equal("1", FizzBuzz(1));
   }
 
+  [Fact]
+  public void Should_return_Fizz_for_3()
+  {
+    Assert.Equal("Fizz", FizzBuzz(3));
+  }
+
   string FizzBuzz(int number)
   {
     return number.ToString();
