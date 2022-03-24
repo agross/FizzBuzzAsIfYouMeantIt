@@ -26,7 +26,7 @@ public class FizzBuzzTests
 
   string FizzBuzz(int number)
   {
-    if (number == 3)
+    if (number % 3 == 0)
     {
       return "Fizz";
     }
