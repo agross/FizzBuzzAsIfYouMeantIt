@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Xunit;
+using Xunit.Abstractions;
 
 Console.WriteLine("Hello, World!");
 
@@ -42,7 +43,7 @@ public class FizzBuzzTests
     Assert.Equal("FizzBuzz", FizzBuzz(15));
   }
 
-  string FizzBuzz(int number)
+  internal string FizzBuzz(int number)
   {
     var result = "";
 
@@ -93,6 +94,22 @@ public class NumbersTests
   }
 
   string Renderer(int number) => "rendered " + number;
+}
+
+public class FizzBuzzKataTests
+{
+  readonly ITestOutputHelper _output;
+
+  public FizzBuzzKataTests(ITestOutputHelper output)
+  {
+    _output = output;
+  }
+
+  [Fact]
+  public void Should_work()
+  {
+    Numbers.Print(100, _output.WriteLine, new FizzBuzzTests().FizzBuzz);
+  }
 }
 
 public class Numbers
