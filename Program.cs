@@ -87,8 +87,9 @@ public class Numbers
 {
   public static void Print(int count, Action<string> display)
   {
-    display("something");
-    display("something");
-
+    for (int i = 1; i <= count; i++)
+    {
+      display("something");
+    }
   }
 }
