@@ -68,26 +68,41 @@ public class FizzBuzzTests
 public class NumbersTests
 {
   int CountOfDisplayedNumbers;
+  readonly ICollection<string> RenderedNumbers = new List<string>();
 
   [Fact]
   public void Should_display_each_number()
   {
-    Numbers.Print(2, Display);
+    Numbers.Print(2, Display, Renderer);
 
     Assert.Equal(2, CountOfDisplayedNumbers);
   }
 
-  void Display(string obj)
+  [Fact]
+  public void Should_render_each_number()
+  {
+    Numbers.Print(2, Display, Renderer);
+
+    Assert.Equal("rendered 1", RenderedNumbers.First());
+  }
+
+  void Display(string renderedNumber)
   {
     CountOfDisplayedNumbers = CountOfDisplayedNumbers + 1;
+    RenderedNumbers.Add(renderedNumber);
+  }
+
+  string Renderer(int number)
+  {
+    return "rendered " + number;
   }
 }
 
 public class Numbers
 {
-  public static void Print(int count, Action<string> display)
+  public static void Print(int count, Action<string> display, Func<int, string> renderer)
   {
-    for (int i = 1; i <= count; i++)
+    for (var i = 1; i <= count; i++)
     {
       display("something");
     }
