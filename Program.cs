@@ -14,6 +14,6 @@ public class FizzBuzzTests
 
   string FizzBuzz(int number)
   {
-    return "";
+    return number.ToString();
   }
 }
