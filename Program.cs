@@ -92,19 +92,15 @@ public class NumbersTests
     RenderedNumbers.Add(renderedNumber);
   }
 
-  string Renderer(int number)
-  {
-    return "rendered " + number;
-  }
+  string Renderer(int number) => "rendered " + number;
 }
 
 public class Numbers
 {
   public static void Print(int count, Action<string> display, Func<int, string> renderer)
   {
-    for (var i = 1; i <= count; i++)
-    {
-      display(renderer(i));
-    }
+    Enumerable.Range(1, count)
+              .ToList()
+              .ForEach(i => display(renderer(i)));
   }
 }
