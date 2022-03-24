@@ -64,3 +64,29 @@ public class FizzBuzzTests
     return result;
   }
 }
+
+public class NumbersTests
+{
+  int CountOfDisplayedNumbers;
+
+  [Fact]
+  public void Should_display_each_number()
+  {
+    Numbers.Print(2, Display);
+
+    Assert.Equal(2, CountOfDisplayedNumbers);
+  }
+
+  void Display(string obj)
+  {
+    CountOfDisplayedNumbers = CountOfDisplayedNumbers + 1;
+  }
+}
+
+public class Numbers
+{
+  public static void Print(int count, Action<string> display)
+  {
+
+  }
+}
