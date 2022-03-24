@@ -24,6 +24,12 @@ public class FizzBuzzTests
     Assert.Equal("Fizz", FizzBuzz(6));
   }
 
+  [Fact]
+  public void Should_return_Buzz_for_5()
+  {
+    Assert.Equal("Buzz", FizzBuzz(5));
+  }
+
   string FizzBuzz(int number)
   {
     if (number % 3 == 0)
