@@ -10,59 +10,37 @@ public class FizzBuzzTests
   [Fact]
   void Should_return_number_for_integer()
   {
-    Assert.Equal("1", FizzBuzz(1));
+    Assert.Equal("1", FizzBuzz.Translate(1));
   }
 
   [Fact]
   public void Should_return_Fizz_for_3()
   {
-    Assert.Equal("Fizz", FizzBuzz(3));
+    Assert.Equal("Fizz", FizzBuzz.Translate(3));
   }
 
   [Fact]
   public void Should_return_Fizz_for_6()
   {
-    Assert.Equal("Fizz", FizzBuzz(6));
+    Assert.Equal("Fizz", FizzBuzz.Translate(6));
   }
 
   [Fact]
   public void Should_return_Buzz_for_5()
   {
-    Assert.Equal("Buzz", FizzBuzz(5));
+    Assert.Equal("Buzz", FizzBuzz.Translate(5));
   }
 
   [Fact]
   public void Should_return_Buzz_for_10()
   {
-    Assert.Equal("Buzz", FizzBuzz(10));
+    Assert.Equal("Buzz", FizzBuzz.Translate(10));
   }
 
   [Fact]
   public void Should_return_FizzBuzz_for_15()
   {
-    Assert.Equal("FizzBuzz", FizzBuzz(15));
-  }
-
-  internal string FizzBuzz(int number)
-  {
-    var result = "";
-
-    if (number % 3 == 0)
-    {
-      result += "Fizz";
-    }
-
-    if (number % 5 == 0)
-    {
-      result += "Buzz";
-    }
-
-    if (result == "")
-    {
-      result = number.ToString();
-    }
-
-    return result;
+    Assert.Equal("FizzBuzz", FizzBuzz.Translate(15));
   }
 }
 
@@ -108,7 +86,32 @@ public class FizzBuzzKataTests
   [Fact]
   public void Should_work()
   {
-    Numbers.Print(100, _output.WriteLine, new FizzBuzzTests().FizzBuzz);
+    Numbers.Print(100, _output.WriteLine, FizzBuzz.Translate);
+  }
+}
+
+public static class FizzBuzz
+{
+  internal static string Translate(int number)
+  {
+    var result = "";
+
+    if (number % 3 == 0)
+    {
+      result += "Fizz";
+    }
+
+    if (number % 5 == 0)
+    {
+      result += "Buzz";
+    }
+
+    if (result == "")
+    {
+      result = number.ToString();
+    }
+
+    return result;
   }
 }
 
