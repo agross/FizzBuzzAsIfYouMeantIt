@@ -30,6 +30,12 @@ public class FizzBuzzTests
     Assert.Equal("Buzz", FizzBuzz(5));
   }
 
+  [Fact]
+  public void Should_return_Buzz_for_10()
+  {
+    Assert.Equal("Buzz", FizzBuzz(10));
+  }
+
   string FizzBuzz(int number)
   {
     if (number == 5)
