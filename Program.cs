@@ -104,7 +104,7 @@ public class Numbers
   {
     for (var i = 1; i <= count; i++)
     {
-      display("something");
+      display(renderer(i));
     }
   }
 }
