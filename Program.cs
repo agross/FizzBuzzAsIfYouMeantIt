@@ -81,7 +81,7 @@ public class NumbersTests
   [Fact]
   public void Should_render_each_number()
   {
-    Numbers.Print(2, Display, Renderer);
+    Numbers.Print(1, Display, Renderer);
 
     Assert.Equal("rendered 1", RenderedNumbers.First());
   }
