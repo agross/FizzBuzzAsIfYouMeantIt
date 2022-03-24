@@ -38,16 +38,18 @@ public class FizzBuzzTests
 
   string FizzBuzz(int number)
   {
+    var result = number.ToString();
+
     if (number % 5 == 0)
     {
-      return "Buzz";
+      result = "Buzz";
     }
 
     if (number % 3 == 0)
     {
-      return "Fizz";
+      result = "Fizz";
     }
 
-    return number.ToString();
+    return result;
   }
 }
