@@ -36,6 +36,12 @@ public class FizzBuzzTests
     Assert.Equal("Buzz", FizzBuzz(10));
   }
 
+  [Fact]
+  public void Should_return_FizzBuzz_for_15()
+  {
+    Assert.Equal("FizzBuzz", FizzBuzz(15));
+  }
+
   string FizzBuzz(int number)
   {
     var result = number.ToString();
